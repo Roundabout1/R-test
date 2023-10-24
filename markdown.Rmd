@@ -1,0 +1,63 @@
+---
+title: "Markdown"
+output:
+  pdf_document: 
+    latex_engine: xelatex
+  keep_tex: true 
+  header-includes:
+   - \XeTeXdefaultencoding utf8
+   - \usepackage{xltxtra}
+   - \usepackage{fontspec}
+   - \setmainfont{Times New Roman}
+   - \setsansfont{Arial}
+   - \setmonofont{Courier New}
+   - \newfontfamily{\cyrillicfont}{Times New Roman}
+   - \newfontfamily{\cyrillicfonttt}{Courier New} 
+   - \newfontfamily{\cyrillicfontsf}{Arial} 
+   - \usepackage[english,russian]{babel}
+  html_document: default
+date: "2023-10-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Виды анализа и R Markdown
+
+Это лабораторная работа **Виды анализа и R Markdown**. Ссылка на github-проект, содержащий копию этого файла, а также полученные RMD, PDF и HTML файлы: <https://github.com/Roundabout1/R-test>.
+
+## Разведочный анализ 
+Работа [К СТАТИСТИЧЕСКОЙ МЕТОДИКЕ ИЗУЧЕНИЯ КУЛЬТУРНЫХ СЛОЕВ ПОСЕЛЕНИЙ ЭПОХИ БРОНЗЫ (РАБОТА НАД ОШИБКАМИ)](https://cyberleninka.ru/article/n/k-statisticheskoy-metodike-izucheniya-kulturnyh-sloev-poseleniy-epohi-bronzy-rabota-nad-oshibkami) является разведочным анализом данных, так как в ней присутствует:
+
+* методы статистического анализа
+* подсчёт статистических числовых параметров, таких как среднеквадратическое отклонение: $\sigma=\sqrt{\frac{\Sigma(x-X)^2}{n-1}}$
+* формирование случайной выборки
+* анализ статистических результатов
+
+![Поселение Каменный Амбар: структура памятника по данным магнитометрии, места расположения
+раскопок и зона археологической разведки в прилегающей округе](images/article_example_img1.png)
+
+## Причинно-следственный анализ
+В статье [Causal Analysis of Health Interventions and Environments for Influencing the Spread of COVID-19 in the United States of America](https://www.frontiersin.org/articles/10.3389/fams.2020.611805/full) исследуются причинно-следственные связи вмешательства со стороны государства на распространение коронавируса в США, исследователи пришли к следующим выводам:
+
+1. Плотность населения --- это наиболее значительный фактор 
+
+> We found that population density was the most significant causal factor of both new cases and death from COVID-19.
+
+2. Больше чёрнокожих американцев погибало от COVID-19.
+
+> We also discovered that more Black Americans were dying from COVID-19.
+
+3. Отсутствие сильного вмешательства со стороны государства ялвялось причиной многих смертей от COVID-19.
+
+> Our results showed that the high numbers of cases and deaths from COVID-19 were due to lacking strong interventions
+
+Cause | Effect | Smallest $p$-value | Cause | Effect | Smallest $p%-value
+------------- | ------------- | ------------- | ------------- | ------------- | -------------
+Retail      | COVID-19 case | $7.67E-26$ | COVID-19 case | Retail      | $1.29E-04$ 
+Grocery     |               | $3.70E-25$ |               | Grocery     | $4.85E-11$
+Parks       |               | $3.87E-23$ |               | Parks       | $1.80E-12$                
+Transit     |               | $1.90E-27$ |               | Transit     | $1.29E-04$        
+Workplaces  |               | $1.07E-25$ |               | Workplaces  | $3.99E-06$        
+Residential |               | $1.09E-25$ |               | Residential | $2.99E-07$        
